@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+(function(){
 
 var Blynk = require('blynk-library');
 var robot = require("robotjs");
@@ -9,7 +10,10 @@ if (!process.argv[2]) {
 
   var open = require('open');
   open(__dirname + '/../docs/blynk-remote.html');
-  process.exit(1);
+  setTimeout(() => {
+    process.exit(1);
+  }, 100);
+  return
 }
 
 var blynk = new Blynk.Blynk(process.argv[2]);
@@ -90,3 +94,5 @@ Object.keys(key_mapping).forEach(function(key_name) {
     }
   });
 });
+
+})();
