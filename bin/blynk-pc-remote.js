@@ -21,17 +21,17 @@ var cur_x = 0,
     cur_y = 0;
 var tmr = 0;
 
-robot.setMouseDelay(2);
+robot.setMouseDelay(0);
 
-function deadZone(d) {
+function cursorDelta(d) {
   var sign = d?d<0?-1:1:0;
-  return (Math.abs(d) < 50) ? 0 : (d - 50*sign)/10;
+  return sign * Math.pow(Math.abs(d)/100, 1.2);
 }
 
 var v1 = new blynk.VirtualPin(1);
 v1.on('write', function(param) {
-  delta_x = deadZone(parseInt(param[0]));
-  delta_y = deadZone(-parseInt(param[1]));
+  delta_x = cursorDelta(parseInt(param[0]));
+  delta_y = cursorDelta(-parseInt(param[1]));
   if ((delta_x != 0 || delta_y != 0) && tmr == 0) {
     var mousePos = robot.getMousePos();
     cur_x = mousePos.x;

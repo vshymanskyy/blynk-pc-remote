@@ -1,6 +1,6 @@
 {
   "name": "blynk-pc-remote",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This app allows you to control your PC remotely using the Blynk App.",
   "main": "index.js",
   "bin": {
