@@ -7,6 +7,7 @@ This app allows you to control your PC remotely using the Blynk App.
 * Page Up / Page Down (for presentations)
 * Mouse control
 * **Completely editable and hackable!**
+* **Note:** this will require 2600+ Blynk energy level
 
 ![App Screen](https://raw.githubusercontent.com/vshymanskyy/blynk-pc-remote/master/docs/blynk-remote-app-small.png)
 
